@@ -1,0 +1,45 @@
+[class^="icon-"]:before {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+[class^="icon-big-"]:before {
+    width: 52px;
+    height: 52px;
+}
+[class^="icon-"] {
+    display: block;
+    margin: 5px 0 5px 5px;
+    vertical-align: middle;
+    filter: grayscale(100%) brightness(800%) contrast(800%);
+    transition: filter 0.4s ease;
+}
+[class^="icon-"]:hover { filter: none; }
+
+.icon-arcane:before { background-image: url("../icons/work/ArcaneSoftware.svg"); }
+.icon-degree:before { background-image: url("../icons/edu/Degree.svg"); }
+.icon-computer-science:before { background-image: url("../icons/edu/ComputerScience.svg"); }
+.icon-date-past:before { background-image: url("../icons/work/Calendar.svg"); }
+.icon-date-present:before { background-image: url("../icons/work/CalendarCurrent.svg"); }
+.icon-email:before { background-image: url("../icons/info/Email.svg"); }
+.icon-github:before { background-image: url("../icons/social/github.svg"); }
+.icon-gitlab:before { background-image: url("../icons/social/gitlab.svg"); }
+.icon-graduation:before { background-image: url("../icons/edu/Graduation.svg"); }
+.icon-home:before { background-image: url("../icons/info/Home.svg"); }
+.icon-it-intern:before { background-image: url("../icons/work/ITIntern.svg"); }
+.icon-linkedin:before { background-image: url("../icons/social/linkedin.svg"); }
+.icon-phone:before { background-image: url("../icons/info/Phone.svg"); }
+.icon-security-researcher:before { background-image: url("../icons/work/SecurityResearcher.svg"); }
+.icon-software-engineer:before { background-image: url("../icons/work/SoftwareEngineer.svg"); }
+.icon-usaa:before { background-image: url("../icons/work/USAA.svg"); }
+.icon-utsa:before { background-image: url("../icons/work/UTSanAntonio.svg"); }
+.icon-wgu:before { background-image: url("../icons/edu/WGU.svg"); }
+.icon-big-print:before { background-image: url("../icons/page/Print.svg"); }
+
+.icon-big-theme-switcher:before { background-image: url("../icons/page/dark.svg"); }
+:root[data-theme='dark'] .icon-big-theme-switcher:before { background-image: url("../icons/page/light.svg"); }

@@ -1,0 +1,61 @@
+<div id="utilities">
+    <div onclick="switchTheme()">
+        <div class="icon-big-theme-switcher"></div>
+    </div>
+    <div onclick="print()">
+        <div class="icon-big-print"></div>
+    </div>
+</div>
+
+<script>
+    const switchTheme = () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+        document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark")
+        localStorage.setItem("theme", isDark ? "light" : "dark")
+    }
+
+    const theme =
+        typeof localStorage !== "undefined" && localStorage.getItem("theme")
+            ? localStorage.getItem("theme")
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light"
+
+    document.documentElement.setAttribute("data-theme", theme)
+    localStorage.setItem("theme", theme)
+</script>
+
+<style>
+    #utilities {
+        display: grid;
+        gap: 24px;
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+    }
+
+    #utilities > div {
+        background-color: var(--primary);
+        border-radius: 50%;
+        height: 64px;
+        width: 64px;
+        opacity: 0.6;
+        transition: opacity 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    #utilities > div:hover { opacity: 1; }
+
+    :root[data-theme='dark'] #utilities > div {
+        background-color: var(--text-light);
+    }
+
+    :root[data-theme='dark'] [class^="icon-big-"]:before {
+        filter: invert();
+    }
+
+    /* max-width = page + ((utility icon + padding) * 2) */
+    @media print, (max-width: calc(8.5in + ((64px + 24px) * 2))) { 
+        #utilities {display: none;}
+    }
+</style>
